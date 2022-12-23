@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Alert, KeyboardAvoidingView, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import type { Phrase } from '../phrases';
 import { phrases as rawPhrases } from '../phrases';
+import {supabase} from '../api/supabase';
 
 const getRandomNumber = (maxNumber: number) => Math.floor(Math.random() * maxNumber);
 
@@ -10,6 +11,10 @@ const Body = (): React.ReactElement => {
     const [currentIndex, setCurrentIndex] = useState<number>(getRandomNumber(rawPhrases.length));
     const [isPressed, setIsPressed] = useState<boolean>(false);
     const [answer, setAnswer] = useState<string>('');
+
+    useEffect(() => {
+        fetchApi();
+    }, []);
 
     const onPress = () => {
         if (!isPressed) {

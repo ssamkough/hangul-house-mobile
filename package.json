@@ -6,9 +6,11 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "types": "npx openapi-typescript https://elgpkefgaydpcddvadeg.supabase.co/rest/v1/?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVsZ3BrZWZnYXlkcGNkZHZhZGVnIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjIxMTM5MjQsImV4cCI6MTk3NzY4OTkyNH0.KZCi_Yp6Zm7HrRWcuqjajuvGZk_jH4spAPAlJuhNxgY --output api/types.ts",
   },
   "dependencies": {
+    "@supabase/supabase-js": "^1.35.6",
     "expo": "~46.0.9",
     "expo-cli": "^6.0.5",
     "expo-status-bar": "~1.4.0",
